@@ -60,4 +60,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        $(function () {
+            $('input').on('click', function () {
+                var Status = $(this).val();
+                $.ajax({
+                    url: 'Home/Index',
+                    data: {
+                        text: $("textarea[name=Status]").val(),
+                        Status: Status
+                    },
+                    dataType: 'json'
+                });
+            });
+        });
+    </script>
 </body>
